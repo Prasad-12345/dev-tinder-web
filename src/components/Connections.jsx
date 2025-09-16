@@ -27,7 +27,7 @@ function Connections() {
   return (
     <div className='text-center my-10'>
       <h1 className='font-bold text-2xl'>Connections</h1>
-      <div className='flex justify-center'>
+      <div className='flex flex-row justify-center gap-2'>
         {connections.map((connection) => (
             <UserCard user={connection} connection={true}/>
         ))}
