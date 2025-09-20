@@ -50,7 +50,7 @@ function Chat() {
         setNewMessage('')
     }
   return (
-    <div className='w-full sm:w-3/4 mx-auto border border-gray-600 m-5 h-[70vh] flex flex-col'>
+    <div className='w-[85%] sm:w-3/4 mx-auto border border-gray-600 m-5 h-[70vh] flex flex-col'>
       <h1 className='p5 border-b border-gray-600 p-2'>Chat</h1>
       <div className='flex-1 overflow-scroll p-2'>
         {/* display message */}
