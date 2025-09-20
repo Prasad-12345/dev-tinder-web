@@ -26,7 +26,7 @@ function Requests() {
   return (
     <div className='text-center my-10'>
       <h1 className='font-bold text-2xl'>Requests</h1>
-      <div className='flex justify-center flex-row gap-2'>
+      <div className='flex flex-row flex-wrap justify-center gap-2 my-5'>
         {requests.map((request, index) => (
             <UserCard key={index} user={request?.fromUserId} request={request._id}/>
         ))}
