@@ -38,7 +38,7 @@ function UserCard({ user, connection = false, request = false }) {
     }
   };
   return (
-    <div>
+    <div className="flex justify-center">
       <div className={`${connection || request ? 'w-30 h-full' : 'w-80'} card bg-base-300 rounded-2xl sm:w-80 shadow-sm overflow-auto`}>
         <figure>
           <img src={photoUrl} alt="photo" className="w-40 sm:w-48 md:w-64 lg:w-80"/>
