@@ -24,7 +24,7 @@ function Login() {
                 emailId, password
             }, {withCredentials:true})
             dispatch(addUser(res.data.user))
-            localStorage.setItem("user", res.data.user)
+            localStorage.setItem("user", JSON.stringify(res.data.user))
             navigate('/')
         }
         catch(err){
