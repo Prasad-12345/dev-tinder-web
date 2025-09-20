@@ -21,8 +21,10 @@ function App() {
       <Loader/>
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login/>}/>
-          <Route  element={<ProtectedRoute><Body/></ProtectedRoute>}>
+          
+          {/* <Route  element={<ProtectedRoute><Body/></ProtectedRoute>}> */}
+          <Route path="/" element={<Body/>}>
+            <Route path="/login" element={<Login/>}/>
             <Route path="/" element={<Feed/>}/>
             <Route path="/profile" element={<Profile/>}/>
             <Route path="/connections" element={<Connections/>}/>
