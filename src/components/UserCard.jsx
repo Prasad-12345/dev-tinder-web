@@ -39,14 +39,14 @@ function UserCard({ user, connection = false, request = false }) {
   };
   return (
     <div>
-      <div className={`${connection || request ? 'w-30' : 'w-80'} card bg-base-300 h-full rounded-2xl sm:w-80 shadow-sm overflow-auto`}>
+      <div className={`${connection || request ? 'w-30 h-full' : 'w-80'} card bg-base-300 rounded-2xl sm:w-80 shadow-sm overflow-auto`}>
         <figure>
           <img src={photoUrl} alt="photo" className="w-40 sm:w-48 md:w-64 lg:w-80"/>
         </figure>
         <div className="card-body">
           <h2 className="card-title justify-center">{firstName + " " + lastName}</h2>
-          {age && gender && <p className="justify-center">{age + ", " + gender}</p>}
-          <p className="justify-center">{about}</p>
+          {age && gender && <p className="flex justify-center">{age + ", " + gender}</p>}
+          <p className="flex justify-center">{about}</p>
           {!connection ? (
             <div className="card-actions justify-center my-4">
               <button
