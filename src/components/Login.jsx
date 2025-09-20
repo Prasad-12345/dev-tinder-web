@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constants";
+import api from "../utils/axiosInstance";
 
 function Login() {
     const [emailId, setEmailId] = useState("")
@@ -19,14 +20,14 @@ function Login() {
 
     const handleLogin = async () => {
         try{
-            const res = await axios.post(BASE_URL + '/login', {
+            const res = await api.post(BASE_URL + '/login', {
                 emailId, password
             }, {withCredentials:true})
             dispatch(addUser(res.data.user))
             navigate('/')
         }
         catch(err){
-            setError(err.response.data)
+            // setError(err.response.data)
         }        
     }
 
@@ -73,7 +74,10 @@ function Login() {
           <div className="card-actions justify-center">
             <button className="btn btn-primary my-1" onClick={isLoginForm ? handleLogin : handleSigUp}>{isLoginForm ? 'Login' : 'SignUp'}</button>
           </div>
-          <p onClick={() => setIsLoginForm(!isLoginForm)} className="text-center text-blue-500 cursor-pointer">{isLoginForm ? 'new user? Signup here' : 'aleady signedup? login here'}</p>
+          <p onClick={() => setIsLoginForm(!isLoginForm)} className="text-center text-blue-500 cursor-pointer">{isLoginForm ? 'new user?? Signup here' : 'aleady signedup? login here'}</p>
+          <p class="text-sm text-pink-800 sm:text-sm sm:text-blue-500 md:text-lg md:text-yellow-300 lg:text-xl lg:text-red-500 xl:text-2xl ">
+            Responsive Text
+          </p>
         </div>
       </div>
     </div>
