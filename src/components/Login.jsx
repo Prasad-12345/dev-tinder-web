@@ -20,10 +20,6 @@ function Login() {
 
     const handleLogin = async () => {
         try{
-            if(!emailId && !password){
-              setEmailId("prasad@gmail.com")
-              setPassword("Prasad@123")
-            }
             const res = await api.post(BASE_URL + '/login', {
                 emailId, password
             }, {withCredentials:true})
@@ -48,6 +44,12 @@ function Login() {
       }
     }
 
+    const handleQuickLogin = () => {
+      if (!emailId && !password) {
+        setEmailId("prasad@gmail.com");
+        setPassword("Prasad@123");
+      }
+    }
   return (
     <div className="flex justify-center items-center my-20">
       <div className="card card-border bg-base-300 w-96">
@@ -78,10 +80,11 @@ function Login() {
           <p className="text-red-500">{error}</p>
           <div className="card-actions justify-center">
             <button className="btn btn-primary my-1" onClick={isLoginForm ? handleLogin : handleSigUp}>{isLoginForm ? 'Login' : 'SignUp'}</button>
+            <button className="btn btn-primary my-1" onClick={handleQuickLogin}>QuickLogin</button>
           </div>
           <p onClick={() => setIsLoginForm(!isLoginForm)} className="text-center text-blue-500 cursor-pointer">{isLoginForm ? 'new user?? Signup here' : 'aleady signedup? login here'}</p>
-          <p class="text-sm text-pink-800 sm:text-sm sm:text-blue-500 md:text-lg md:text-yellow-300 lg:text-xl lg:text-red-500 xl:text-2xl ">
-            Responsive Text
+          <p className="text-sm">
+            Click on quicklogin to set default email and password.
           </p>
         </div>
       </div>

@@ -13,6 +13,7 @@ function NavBar() {
       try{
         const res = axios.post(BASE_URL+'/logout', {}, {withCredentials:true})  
         dispatch(removeUser())
+        localStorage.removeItem("user");
         navigate('/login')
       }
       catch(err){
