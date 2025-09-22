@@ -20,6 +20,10 @@ function Login() {
 
     const handleLogin = async () => {
         try{
+            if(!emailId && !password){
+              setEmailId("prasad@gmail.com")
+              setPassword("Prasad@123")
+            }
             const res = await api.post(BASE_URL + '/login', {
                 emailId, password
             }, {withCredentials:true})
